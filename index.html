@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title> Tirage de boules aléatoire </title>
+
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/box.css">
+    <link rel="stylesheet" href="css/footer.css">
+
+    <script type="text/javascript" src="lib/jquery-3.3.1.min.js"> </script>
+    <script type="text/javascript" src="js/const.js"> </script>
+    <script type="text/javascript" src="js/java.js"> </script>
+  </head>
+  <body>
+
+    <h1 id="title"> 🎱 Tirage de boule aléatoire </h1>
+
+    <main id="main">
+      <div id="box-pane">
+        <div id="box-open"> </div>
+        <div id="box">
+
+        </div>
+      </div>
+      <button type="button" id="shuffle-button" name="button"> Mélanger 🔄 </button>
+      <div id="box-history">
+
+      </div>
+    </main>
+
+    <div id="option-footer">
+      <div class="option-footer-input">
+        <div class="option-footer-input-boule" style="background-color: var(--grey-boule)"> </div>
+        <input type="text" class="option-footer-input-inp" id="all-boules" name="" value="100">
+      </div>
+      <div class="option-footer-input">
+        <div class="option-footer-input-boule" style="background-color: var(--green)"> </div>
+        <input type="text" class="option-footer-input-inp" id="green-boules" name="" value="95">
+      </div>
+      <div class="option-footer-input">
+        <div class="option-footer-input-boule" style="background-color: var(--red)"> </div>
+        <input type="text" class="option-footer-input-inp" id="red-boules" name="" value="5">
+      </div>
+    </div>
+
+    <div id="run-footer">
+      <div class="boules-pourcent">
+        <div class="boules-pourcent-boule" style="background-color: var(--green);"> </div>
+        <p class="boules-pourcent-label" id="green-boules-pourcent">90%</p>
+      </div>
+      <div class="boules-pourcent">
+        <div class="boules-pourcent-boule" style="background-color: var(--red);"> </div>
+        <p class="boules-pourcent-label" id="red-boules-pourcent">10%</p>
+      </div>
+      <div class="run-check-button" to-update="avec_remise">
+        <input type="checkbox" class="run-check-button-box">
+        <p class="run-check-button-label"> tirage avec remise </p>
+      </div>
+      <div class="run-check-button" to-update="tirage_manuel" style="margin-top: 0">
+        <input type="checkbox" class="run-check-button-box">
+        <p class="run-check-button-label"> tirage manuel </p>
+      </div>
+      <button type="button" id="run-button" name="button"> Tirer une boule 🎯 </button>
+    </div>
+
+  </body>
+</html>

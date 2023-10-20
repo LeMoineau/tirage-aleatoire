@@ -1,0 +1,162 @@
+
+#box-pane {
+
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+
+  width: auto;
+  height: auto;
+
+  --box-size: 400px;
+  --box-border-radius: 15px;
+  --box-border-color: black;
+  --box-border-width: 2px;
+  --box-open-width: 33%;
+  --box-open-height: 30px;
+
+}
+
+#box {
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-content: flex-start;
+
+  width: var(--box-size);
+  height: var(--box-size);
+  border: solid var(--box-border-color) var(--box-border-width);
+  border-radius: 15px;
+  transform: translate(0);
+
+}
+
+#box-open {
+
+  display: flex;
+  justify-content: center;
+
+  background-color: var(--grey);
+  width: var(--box-open-width);
+  min-height: var(--box-open-height);
+  margin-bottom: calc(-1 * var(--box-border-width));
+  z-index: 1;
+  transform: scale(1);
+
+}
+
+#box-open::before, #box-open::after {
+
+  content: "";
+  width: 90%;
+  height: var(--box-open-height);
+  position: absolute;
+  background-color: transparent;
+  border: solid var(--box-border-color) var(--box-border-width);
+  border-top-color: transparent;
+  box-sizing: border-box;
+
+}
+
+#box-open::before {
+
+  left: -80%;
+  border-left-color: transparent;
+  border-bottom-right-radius: var(--box-border-radius);
+
+}
+
+#box-open::after {
+
+  right: -80%;
+  border-right-color: transparent;
+  border-bottom-left-radius: var(--box-border-radius);
+
+}
+
+@keyframes bouleEnter {
+  0% { transform: scale(0); }
+  100% { transform: scale(1); }
+}
+
+.boule {
+
+  --boule-size: 30px;
+
+  width: var(--boule-size);
+  height: var(--boule-size);
+  border-radius: 100%;
+  border: solid var(--grey) 2px;
+  animation: ease-in 0.5s bouleEnter;
+  z-index: 1;
+
+}
+
+.boule.red {
+
+  background-color: var(--red);
+
+}
+
+.boule.green {
+
+  background-color: var(--green);
+
+}
+
+.boule.hidden {
+
+  background-color: var(--hidden-color)!important;
+
+}
+
+.boule.choosen {
+
+  position: absolute;
+  width: 50px!important;
+  height: 50px!important;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 0;
+  z-index: 2;
+  box-shadow: var(--shadow);
+
+}
+
+.boule.hasbeenchoose {
+
+  --boule-size: 35px;
+
+  transition: all 0.2s linear;
+  min-height: var(--boule-size);
+  min-width: var(--boule-size);
+
+}
+
+#box-history {
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+
+  position: fixed;
+  top: 0;
+  right: 10px;
+  max-height: 50%;
+
+}
+
+.box-history-message {
+
+  margin: 0;
+  text-align: right;
+  margin-top: 10px;
+  font-size: 15px;
+  max-width: 80px;
+
+}
